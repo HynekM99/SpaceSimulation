@@ -2,7 +2,6 @@ package graphics;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -13,10 +12,10 @@ import java.awt.event.KeyListener;
 import java.awt.geom.AffineTransform;
 
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 import core.SpaceSystem;
 
+@SuppressWarnings("serial")
 public class MainPanel extends JPanel implements ActionListener, KeyListener {
 	private final SpaceSystem spaceModel;
 	
@@ -43,13 +42,14 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener {
 		
 		g2d.setTransform(new AffineTransform());
 		g2d.translate(cx, cy);
+//		g2d.scale(0.1, 0.1);
 		g2d.translate(-(int)spaceModel.centerObject.getLocation().x, -(int)spaceModel.centerObject.getLocation().y);
 		
 		spaceModel.getSpaceObjects().forEach(object -> object.paintComponent(g));
 		
 		String time = String.format("%.2f", spaceModel.getSimulationTime());
-		FontMetrics metrics = g.getFontMetrics(g.getFont());
-		int textWidth = metrics.stringWidth(time);
+		//FontMetrics metrics = g.getFontMetrics(g.getFont());
+		//int textWidth = metrics.stringWidth(time);
 		g.setColor(Color.white);
 		g.drawString(time, 0, 0);
 		

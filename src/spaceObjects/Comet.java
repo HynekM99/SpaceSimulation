@@ -4,15 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import core.Location;
-import core.SpaceObject;
 import core.Velocity;
 
 public class Comet extends SpaceObject {
-	public final Color color;
+	public Color color;
 	
-	public Comet(String name, String type, Location location, Velocity velocity, double weight, Color color) {
-		super(name, type, location, velocity, weight);
-		this.color = color;
+	public Comet(String name, Location location, Velocity velocity, double weight) {
+		super(name, location, velocity, weight);
 	}
 
 	@Override
