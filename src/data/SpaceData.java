@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import core.Location;
-import core.Velocity;
+import core.vectors.Location;
+import core.vectors.Velocity;
 import data.parsers.IDataParser;
 import spaceObjects.Comet;
 import spaceObjects.Planet;

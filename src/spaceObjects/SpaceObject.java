@@ -3,9 +3,9 @@ package spaceObjects;
 import java.awt.Graphics;
 import java.util.Objects;
 
-import core.Acceleration;
-import core.Location;
-import core.Velocity;
+import core.vectors.Acceleration;
+import core.vectors.Location;
+import core.vectors.Velocity;
 
 public abstract class SpaceObject {
 	public final String name;
@@ -14,6 +14,11 @@ public abstract class SpaceObject {
 	protected Location location;
 	protected Velocity velocity;
 	protected Acceleration acceleration;
+	
+	public double scale = 1;
+	
+	// The distance of the farthest point of the object from the object location coordinates
+	public double size = 0;
 	
 	public SpaceObject(String name, Location location, Velocity velocity, double weight) {
 		this.name = name;
